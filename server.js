@@ -37,7 +37,7 @@ app.get('/:path', async (req, res, next) => {
 });
 
 app.use((req, res) => {
-    res.redirect('https://shorturl.isawebapp.com');
+    res.redirect('https://shorturl.isawebapp.com/error');
 });
 
 app.listen(PORT, () => {
