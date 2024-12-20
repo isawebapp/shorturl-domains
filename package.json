@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5"
+  },
+  "name": "shorturl-domains.isawebapp.com",
+  "version": "1.0.0",
+  "description": "Server to server under short domains for shorturl.isawebapp.com",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "tonyliu.cloud",
+  "license": "MIT"
+}
