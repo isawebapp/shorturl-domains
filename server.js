@@ -11,7 +11,7 @@ const dbConfig = {
     database: 'shorturl',
 };
 
-app.get('/:path', async (req, res) => {
+app.get('/:path', async (req, res, next) => {
     const { path } = req.params;
     const domain = req.hostname;
 
@@ -28,12 +28,16 @@ app.get('/:path', async (req, res) => {
         if (rows.length > 0) {
             res.redirect(rows[0].redirect_url);
         } else {
-            res.status(404).send('Not Found');
+            next();
         }
     } catch (error) {
         console.error('Database error:', error);
         res.status(500).send('Internal Server Error');
     }
+});
+
+app.use((req, res) => {
+    res.redirect('https://shorturl.isawebapp.com');
 });
 
 app.listen(PORT, () => {
